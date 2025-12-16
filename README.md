@@ -34,7 +34,6 @@ python -m venv myenv
 myenv\Scripts\activate
 ```
 
-pip install -r requirements.txt
 
 ### 3. Install Dependencies
 ```sh
