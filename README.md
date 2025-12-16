@@ -9,9 +9,12 @@ This project is a Django-based web application.
 
 ## Setup Instructions
 
-```
+git clone https://github.com/DebaA17/django-recon.git
+cd django-recon
+
 ### 1. Clone the Repository
-```
+
+```sh
 git clone https://github.com/DebaA17/django-recon.git
 cd django-recon
 ```
@@ -19,59 +22,74 @@ cd django-recon
 
 ### 2. Create and Activate Virtual Environment
 
+
 #### On Linux/Mac:
-```
+```sh
 python3 -m venv myenv
 source myenv/bin/activate
 ```
 
+
 #### On Windows:
-```
+```sh
 python -m venv myenv
 myenv\Scripts\activate
 ```
 
+pip install -r requirements.txt
+
 ### 3. Install Dependencies
-```
+```sh
 pip install -r requirements.txt
 ```
 
+
 ### 4. Apply Migrations
-```
+```sh
 python manage.py migrate
 ```
 
+
 ### 5. Create a Superuser (Optional, for admin access)
-```
+```sh
 python manage.py createsuperuser
 ```
+
 
 
 ### 6. Run the Development Server
 
 #### On Linux/Mac:
-```
+```sh
 python manage.py runserver 0.0.0.0:8000
 ```
 
 #### On Windows:
-```
+```sh
 python manage.py runserver
 ```
 
-The server will start at http://127.0.0.1:8000/ 
+
+The server will start at http://127.0.0.1:8000/
+
 
 ## Additional Commands
 
 - **Collect static files:**
-  ```
+  ```sh
   python manage.py collectstatic
   ```
 - **Run tests:**
-  ```
+  ```sh
   python manage.py test
   ```
+
+
 
 ## Notes
 - Always activate your virtual environment before running any Django commands.
 - For production deployment, additional configuration is required (see Django documentation).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
