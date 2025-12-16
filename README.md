@@ -9,8 +9,6 @@ This project is a Django-based web application.
 
 ## Setup Instructions
 
-git clone https://github.com/DebaA17/django-recon.git
-cd django-recon
 
 ### 1. Clone the Repository
 
