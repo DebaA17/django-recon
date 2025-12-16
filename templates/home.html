@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align:center; color:var(--neon-blue); font-size:2.2rem; margin-bottom: 24px; letter-spacing:2px;">DomainRecon Dashboard</h1>
+<div class="neon-box" style="margin-bottom: 24px;">
+    <form method="get" action="/" style="margin:0;">
+        <input type="text" name="domain" placeholder="Enter domain (e.g. example.com)" required style="width: 350px; max-width:100%; display:block; margin:0 auto;">
+    </form>
+</div>
+
+<div class="neon-box">
+    <div class="section-title">DNS Enumeration</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Record Type</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- DNS records will be rendered here -->
+            {% for record in dns_records %}
+            <tr>
+                <td>{{ record.type }}</td>
+                <td>{{ record.value }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="2">No records found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="neon-box">
+    <div class="section-title">Security Analysis</div>
+    <ul>
+        {% for check in security_checks %}
+        <li>
+            {% if check.valid %}
+                <span class="check">✔</span>
+            {% else %}
+                <span class="cross">✖</span>
+            {% endif %}
+            {{ check.name }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="neon-box" style="border:2.5px solid var(--neon-green); box-shadow:0 0 12px var(--neon-green);">
+    <div class="section-title">Domain Security Score</div>
+    <div style="font-size:2em; color:var(--neon-green);">{{ security_score }}/100</div>
+    <div class="score-bar">
+        <div class="score-bar-inner" style="width: {{ security_score }}%;"></div>
+    </div>
+</div>
+
+<div class="neon-box">
+    <div class="section-title">WHOIS, IP, ASN, ISP</div>
+    <table class="data-table">
+        <tbody>
+            <tr><th>WHOIS</th><td><pre style="white-space:pre-wrap;max-height:300px;overflow:auto;">{{ whois_info }}</pre></td></tr>
+            <tr><th>IP Geolocation</th><td>{{ ip_geo }}</td></tr>
+            <tr><th>ASN</th><td>{{ asn }}</td></tr>
+            <tr><th>ISP</th><td>{{ isp }}</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="neon-box">
+    <div class="section-title">Security Headers</div>
+    <table class="data-table">
+        <thead>
+            <tr><th>Header</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            {% for header in security_headers %}
+            <tr>
+                <td>{{ header.name }}</td>
+                <td>
+                    {% if header.present %}
+                        <span class="check">✔</span> Present
+                    {% else %}
+                        <span class="cross">✖</span> Missing
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="neon-box">
+    <div class="section-title">Client Info</div>
+    <table class="data-table">
+        <tbody>
+            <tr><th>IP Address</th><td>{{ client_ip }}</td></tr>
+            <tr><th>Browser</th><td>{{ client_ua }}</td></tr>
+            <tr><th>ISP</th><td>{{ client_isp }}</td></tr>
+            <tr><th>Location</th><td>{{ client_location }}</td></tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+body {
+    background: #181c24;
+    color: #e0e6f0;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+/* Neon accent */
+:root {
+    --neon-blue: #00eaff;
+    --neon-green: #00ffae;
+    --neon-pink: #ff00c8;
+    --neon-yellow: #ffe600;
+    --danger: #ff3b3b;
+    --success: #00ffae;
+}
+
+input[type="text"] {
+    background: #23293a;
+    border: 2px solid var(--neon-blue);
+    color: #e0e6f0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+input[type="text"]:focus {
+    border: 2px solid var(--neon-green);
+}
+
+.neon-box {
+    background: #23293a;
+    border: 1.5px solid var(--neon-blue);
+    border-radius: 12px;
+    box-shadow: 0 0 16px var(--neon-blue);
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    color: var(--neon-blue);
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.check {
+    color: var(--success);
+    font-size: 1.3em;
+    margin-right: 6px;
+}
+.cross {
+    color: var(--danger);
+    font-size: 1.3em;
+    margin-right: 6px;
+}
+
+.score-bar {
+    background: #23293a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+    height: 24px;
+    box-shadow: 0 0 8px var(--neon-green);
+}
+.score-bar-inner {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
+    transition: width 0.5s;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #23293a;
+    color: #e0e6f0;
+    margin-top: 12px;
+}
+.data-table th, .data-table td {
+    border: 1px solid var(--neon-blue);
+    padding: 8px 12px;
+    text-align: left;
+}
+.data-table th {
+    background: #181c24;
+    color: var(--neon-blue);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #23293a;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--neon-blue);
+    border-radius: 8px;
+}
