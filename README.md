@@ -5,55 +5,50 @@ This project is a Django-based web application.
 
 ---
 
-**This project is a 3rd Semester project for BPPIMT, Salt Lake.**
+**This project is part of my 3rd semester coursework for the Bachelor of Computer Applications (BCA) program at BPPIMT, Salt Lake.**
 
 ---
 
-## Project Structure
+
+# Project Structure
 
 ```
-db.sqlite3
-LICENSE
-manage.py
-README.md
-requirements.txt
-core/
-  __init__.py
-  admin.py
-  apps.py
-  models.py
-  tests.py
-  views.py
-  migrations/
-    __init__.py
-django_recon/
-  __init__.py
-  asgi.py
-  settings.py
-  urls.py
-  wsgi.py
-myenv/
-  ... (virtual environment files)
-static/
-  css/
-    style.css
-  img/
-  js/
-    main.js
-templates/
-  base.html
-  home.html
+django-recon/
+├── core/           # App: core business logic, models, views
+│   ├── migrations/ # DB migrations
+│   └── ...         # Other app files
+├── demo/           # (Empty or for demo purposes)
+├── django_recon/   # Project settings, URLs, WSGI/ASGI
+├── static/         # Static files (CSS, JS, images)
+│   ├── css/
+│   ├── img/
+│   └── js/
+├── templates/      # HTML templates
+├── db.sqlite3      # SQLite database file
+├── manage.py       # Django management script
+├── requirements.txt# Python dependencies
+├── myenv/          # Python virtual environment
+└── README.md       # Project documentation
 ```
+
+
 
 ## Demo
 
-### Demo
+Below are example screenshots of the tool in action:
 
 ![Google Demo](demo/demo_google.png)
+
 
 ![Whois Demo](demo/whois_demo.png)
 
 *Demo images are shown above.*
+
+---
+
+## Disclaimer
+
+This project is a domain reconnaissance tool intended for educational and authorized security testing purposes only. The author is not responsible for any misuse or illegal activities performed using this tool. Use responsibly and always ensure you have proper authorization.
 
 ## Prerequisites
 - Python 3.11+
