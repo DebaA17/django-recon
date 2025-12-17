@@ -1,6 +1,59 @@
+
 # Django Recon
 
 This project is a Django-based web application.
+
+---
+
+**This project is a 3rd Semester project for BPPIMT, Salt Lake.**
+
+---
+
+## Project Structure
+
+```
+db.sqlite3
+LICENSE
+manage.py
+README.md
+requirements.txt
+core/
+  __init__.py
+  admin.py
+  apps.py
+  models.py
+  tests.py
+  views.py
+  migrations/
+    __init__.py
+django_recon/
+  __init__.py
+  asgi.py
+  settings.py
+  urls.py
+  wsgi.py
+myenv/
+  ... (virtual environment files)
+static/
+  css/
+    style.css
+  img/
+  js/
+    main.js
+templates/
+  base.html
+  home.html
+```
+
+## Demo
+
+### Demo
+
+![Google Demo](demo/demo_google.png)
+
+![Whois Demo](demo/whois_demo.png)
+
+*Demo images are shown above.*
 
 ## Prerequisites
 - Python 3.11+
